@@ -22,6 +22,27 @@ const prisma = new PrismaClient();
 app.use(cors());
 app.use(express.json());
 
+// server.js
+
+// ========================================
+// CORS 設定を更新
+// ========================================
+
+// --- Day4 変更 ここから ---
+// 本番環境では特定のオリジンのみ許可
+const corsOptions = {
+  origin: [
+    "http://localhost:3000",
+    "https://gs-exp-next-blush.vercel.app/",  // あなたの Vercel URL
+    // 他の Vercel URL がある場合は追加
+  ],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+// --- Day4 変更 ここまで ---
+// ※ 元は app.use(cors()); だけだった
+
 // ========================================
 // 環境変数
 // ========================================
