@@ -33,7 +33,7 @@ app.use(express.json());
 const corsOptions = {
   origin: [
     "http://localhost:3000",
-    "https://gs-exp-next-blush.vercel.app/",  // あなたの Vercel URL
+    "https://gs-exp-next-blush.vercel.app",  // あなたの Vercel URL
     // 他の Vercel URL がある場合は追加
   ],
   credentials: true,
